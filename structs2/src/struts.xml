@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <!-- 指定全局国际化资源文件 -->
+    <constant name="struts.custom.i18n.resources" value="mess"/>
+    <!-- 指定国际化编码所使用的字符集 -->
+    <constant name="struts.i18n.encoding" value="GBK"/>
+    <!--指定constant的name为devMode表示处于开发模式，value=true修改配置文件内容自动热替换而不需要每次重新发布-->
+    <constant name="struts.devMode" value="true"/>
+
+    <package name="ftguang" extends="struts-default">
+        <action name="login" class="com.ftguang.controller.LoginAction">
+            <!-- 定义三个逻辑视图和物理资源之间的映射 -->
+            <result name="input">/login.jsp</result>
+            <result name="error">/error.jsp</result>
+            <result name="success">/success.jsp</result>
+        </action>
+        <action name="biz" class="com.ftguang.controller.BizAction">
+            <result name="success">/biz_success.jsp</result>
+        </action>
+    </package>
+
+</struts>
